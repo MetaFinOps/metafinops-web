@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon-Aware Scheduling: Save Money and the Planet Simultaneously – MetaFinOps Blog</title>
+  <meta name="description" content="Grid carbon intensity varies 5x across cloud regions. By shifting batch workloads to low-carbon windows, enterprises reduce both their CO₂e footprint and their compute bill." />
+  <meta property="og:title" content="Carbon-Aware Scheduling: Save Money and the Planet Simultaneously" />
+  <meta property="og:description" content="How shifting batch workloads to low-carbon grid windows cuts your cloud bill and your emissions at the same time." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://metafinops.com/blog/carbon-aware-scheduling.html" />
+  <meta property="article:published_time" content="2026-01-31" />
+  <meta property="article:author" content="MetaFinOps" />
+  <meta property="article:section" content="GreenOps" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carbon-Aware Scheduling: Save Money and the Planet Simultaneously" />
+  <meta name="twitter:description" content="How shifting batch workloads to low-carbon grid windows cuts your cloud bill and your emissions at the same time." />
+  <link rel="canonical" href="https://metafinops.com/blog/carbon-aware-scheduling.html" />
+  <link rel="stylesheet" href="../css/styles.css?v=5" />
+  <link rel="stylesheet" href="../css/pages.css?v=5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <span></span>
+      <span>AI-native FinOps Solutions by <a href="../index.html">MetaFinOps</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand">
+        <img class="brand-logo" src="../images/logo-icon-transparent.png" alt="MetaFinOps" width="36" height="33" style="height:33px;width:auto;">
+        <span class="brand-name">MetaFinOps</span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false">Solutions <span class="chevron">&#9662;</span></button>
+          <div class="nav-dropdown-menu">
+            <a href="../solutions/cloud-cost-optimization.html">Cloud Cost Optimization</a>
+            <a href="../solutions/ai-gpu-finops.html">AI/GPU FinOps</a>
+            <a href="../solutions/token-cost-intelligence.html">Token Cost Intelligence</a>
+            <a href="../solutions/devops-finops.html">DevOps FinOps</a>
+            <a href="../solutions/greenops.html">GreenOps</a>
+            <div class="dropdown-divider"></div>
+            <a href="../use-cases.html">Use Cases</a>
+            <a href="../why-metafinops.html">Why MetaFinOps</a>
+          </div>
+        </div>
+        <a href="../platform.html">Platform</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../about.html">About</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../roadmap.html">Roadmap</a>
+        <a href="#" class="nav-login">
+          <span class="login-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></span>
+          Log In
+        </a>
+        <a href="../contact.html" class="btn-outline-header">Get Started</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section style="padding:4rem 0;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div style="max-width:800px;">
+        <span class="blog-tag" style="margin-bottom:1rem;">GreenOps</span>
+        <h1 style="font-size:2.2rem;font-weight:700;color:var(--heading);margin-bottom:1rem;line-height:1.2;">Carbon-Aware Scheduling: Save Money and the Planet Simultaneously</h1>
+        <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.6;">Grid carbon intensity varies 5x across cloud regions and 3x within a single region over the course of a day. By shifting batch workloads to low-carbon windows, enterprises reduce both their CO&#8322;e footprint and their compute bill—without touching a line of application code.</p>
+        <div style="display:flex;gap:1.5rem;align-items:center;color:var(--text-muted);font-size:0.9rem;">
+          <span>January 31, 2026</span>
+          <span>•</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CONTENT -->
+  <section style="padding:4rem 0;">
+    <div class="container" style="max-width:800px;">
+
+      <h2>The Carbon Intensity of Compute</h2>
+      <p>Every unit of electricity you consume has a carbon cost—how much CO&#8322;e was emitted to generate it. That cost varies dramatically based on the fuel mix of the grid supplying your data center at any given moment. When solar panels are generating at peak output, electricity is both cheaper and cleaner. When the grid falls back on gas peaker plants at 7 PM, the same compute costs more carbon and often more money.</p>
+      <p>This isn't theoretical. Microsoft, Google, and AWS all publish near-real-time carbon intensity signals for their regions. Electricity spot prices, which correlate loosely with carbon intensity (renewable-heavy grids tend to have lower marginal costs), create real-time pricing signals that savvy operators already exploit. The GreenOps angle is to exploit <em>both signals simultaneously</em>.</p>
+
+      <h2>Carbon Intensity: The Numbers</h2>
+      <p>To ground this in data, consider the variance in carbon intensity across AWS regions (grams of CO&#8322;e per kWh, approximate 2025 averages):</p>
+      <ul>
+        <li><strong>us-east-1 (N. Virginia):</strong> ~380 gCO&#8322;e/kWh</li>
+        <li><strong>eu-west-1 (Ireland):</strong> ~310 gCO&#8322;e/kWh</li>
+        <li><strong>eu-north-1 (Stockholm):</strong> ~26 gCO&#8322;e/kWh — nearly 15× cleaner than us-east-1</li>
+        <li><strong>ap-southeast-2 (Sydney):</strong> ~620 gCO&#8322;e/kWh — 60% dirtier than us-east-1</li>
+      </ul>
+      <p>Within us-east-1 alone, the diurnal (time-of-day) variation in carbon intensity can swing 40–60% between 2 AM (high solar and wind mix nationally, low demand) and 6 PM (peak demand, gas peaker plants online).</p>
+      <p>For a workload consuming 1 MW/hr, that 40% swing represents the difference between emitting 240 kg CO&#8322;e and 380 kg CO&#8322;e—for the exact same compute task.</p>
+
+      <h2>Which Workloads Can Be Shifted?</h2>
+      <p>Carbon-aware scheduling requires workloads with <strong>temporal flexibility</strong>—jobs that have a deadline but not a specific required start time. The most common candidates:</p>
+
+      <h3>High-Value Candidates</h3>
+      <ul>
+        <li><strong>AI/ML training jobs:</strong> Most training runs have a "needed by" time (the next morning stand-up, end of day) but no reason they must start at 2 PM specifically. A 6-hour A100 training job can often shift 4–8 hours with zero user impact.</li>
+        <li><strong>Data pipeline ETL:</strong> Nightly batch transforms, data warehouse loads, and feature engineering pipelines are inherently scheduled. Adding a 2–4 hour window of flexibility around the trigger time is often trivial.</li>
+        <li><strong>CI/CD pipelines:</strong> Non-blocking test suites and build pipelines triggered by commits that don't need instant feedback can be queued into low-carbon windows.</li>
+        <li><strong>Database backups and snapshots:</strong> These need to happen, but not at a specific instant. A 3-hour backup window can easily shift by 6 hours.</li>
+      </ul>
+
+      <h3>Poor Candidates</h3>
+      <ul>
+        <li>Real-time serving (inference, API responses)—latency requirements prohibit geographic or temporal shifting</li>
+        <li>Interactive development workloads—engineers are waiting</li>
+        <li>Any job with hard SLA requirements in the next 1–2 hours</li>
+      </ul>
+
+      <h2>The Cost Angle: Why This Also Saves Money</h2>
+      <p>The financial case for carbon-aware scheduling is built on three mechanisms:</p>
+
+      <h3>1. Spot Instance Availability</h3>
+      <p>Spot instance availability and pricing both improve during low-demand periods (which correlate with low-carbon windows). A training job shifted to 3 AM has a much higher probability of running on spot vs. on-demand, saving 70–90% on GPU costs.</p>
+
+      <h3>2. Off-Peak Data Transfer</h3>
+      <p>Some cloud providers offer lower egress costs during off-peak windows. Data-intensive ETL jobs benefit doubly: compute is cheaper, and data movement is cheaper.</p>
+
+      <h3>3. Committed Use / Savings Plan Coverage</h3>
+      <p>When you concentrate flexible workloads into predictable low-carbon windows, you can right-size your Savings Plan commitments. Spreading jobs randomly across the day requires larger commitments to cover peaks; concentrating them lets you commit to a steadier, smaller baseline.</p>
+
+      <h2>Implementing Carbon-Aware Scheduling</h2>
+
+      <h3>Step 1: Classify Your Workloads</h3>
+      <p>Tag every batch job with a maximum delay tolerance: how many hours can this job be deferred from its nominal start time without affecting downstream processes? Start with jobs that tolerate 4+ hours of shift.</p>
+
+      <h3>Step 2: Integrate a Carbon Signal</h3>
+      <p>Several APIs provide regional carbon intensity data:</p>
+      <ul>
+        <li><strong>Electricity Maps API:</strong> Real-time and forecast carbon intensity for 50+ countries</li>
+        <li><strong>WattTime API:</strong> Marginal operating emissions rate (MOER) for US grid regions</li>
+        <li><strong>Google Cloud Carbon Footprint API:</strong> For GCP workloads, hourly carbon intensity per region</li>
+        <li><strong>Azure Carbon-Aware SDK:</strong> Open-source SDK from the Green Software Foundation</li>
+      </ul>
+
+      <h3>Step 3: Define a Scheduling Policy</h3>
+      <p>A simple policy: "Run this job in the next 8 hours, but prefer the 2-hour window with the lowest forecast carbon intensity within that range." Most job schedulers (Airflow, Argo Workflows, Kubernetes CronJobs) can be wrapped with a pre-submit hook that evaluates the carbon signal and adjusts the trigger time.</p>
+
+      <h3>Step 4: Measure and Report</h3>
+      <p>Track carbon avoided (gCO&#8322;e saved vs. running at the original scheduled time) and cost delta (spot savings, off-peak pricing). This data feeds your ESG reporting and quantifies the ROI for leadership.</p>
+
+      <h2>Real-World Results</h2>
+      <p>Companies that have implemented carbon-aware scheduling for batch AI workloads report:</p>
+      <ul>
+        <li><strong>18–34% reduction in carbon emissions</strong> from shifted workloads (MOER-weighted)</li>
+        <li><strong>25–45% reduction in GPU compute cost</strong> on shifted jobs (primarily from increased spot utilization)</li>
+        <li><strong>Zero latency impact</strong> for downstream processes when delay tolerances are correctly classified</li>
+      </ul>
+
+      <h2>The GreenOps Flywheel</h2>
+      <p>Carbon-aware scheduling creates a virtuous cycle. Reducing emissions reduces cost, which funds further investment in efficiency tooling. The sustainability story becomes credible to ESG auditors because it's backed by operational data, not purchased offsets. Customers in regulated industries—financial services, healthcare, government—increasingly require this documentation as part of vendor procurement.</p>
+      <p>The organizations winning on sustainability aren't the ones buying the most carbon offsets. They're the ones using carbon intensity as a real-time operational signal, the same way they use CPU utilization or error rate.</p>
+
+      <!-- CTA -->
+      <div style="background:var(--card-bg);border:1px solid var(--card-border);padding:2rem;border-radius:12px;text-align:center;margin-top:3rem;">
+        <h3 style="margin-bottom:0.8rem;">Measure Your Cloud Carbon Footprint</h3>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;">MetaFinOps tracks carbon per GPU-hour, identifies shiftable workloads, and generates ESG-ready reports.</p>
+        <a href="../contact.html" class="btn-primary">Request a Demo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED ARTICLES -->
+  <section style="padding:4rem 0;border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 style="margin-bottom:2rem;">Related Articles</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
+        <a href="shift-left-finops.html" style="padding:2rem;border:1px solid var(--card-border);border-radius:12px;transition:all var(--transition);color:inherit;text-decoration:none;" onmouseover="this.style.background='var(--card-bg)'" onmouseout="this.style.background=''">
+          <span class="blog-tag">DevOps</span>
+          <h3 style="font-size:1.05rem;color:var(--heading);margin:0.8rem 0;">Shift-Left FinOps: PR Cost Annotations</h3>
+          <p style="color:var(--text-muted);margin:0;font-size:0.9rem;">How showing engineers cost at the PR level drives 40% spending reduction in 90 days.</p>
+        </a>
+        <a href="finops-evolution.html" style="padding:2rem;border:1px solid var(--card-border);border-radius:12px;transition:all var(--transition);color:inherit;text-decoration:none;" onmouseover="this.style.background='var(--card-bg)'" onmouseout="this.style.background=''">
+          <span class="blog-tag">Industry</span>
+          <h3 style="font-size:1.05rem;color:var(--heading);margin:0.8rem 0;">Why FinOps Needs to Evolve</h3>
+          <p style="color:var(--text-muted);margin:0;font-size:0.9rem;">From cost dashboards to engineering guardrails—the next era of the discipline.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding:4rem 2rem 2rem;">
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Solutions</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cloud Cost Optimization</a>
+          <a href="../solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">AI/GPU FinOps</a>
+          <a href="../solutions/token-cost-intelligence.html" style="font-size:0.85rem;color:var(--text-muted);">Token Cost Intelligence</a>
+          <a href="../solutions/devops-finops.html" style="font-size:0.85rem;color:var(--text-muted);">DevOps FinOps</a>
+          <a href="../solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">GreenOps</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Features</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">Carbon Tracking</a>
+          <a href="../solutions/greenops.html" style="font-size:0.85rem;color:var(--text-muted);">ESG Reporting</a>
+          <a href="../solutions/ai-gpu-finops.html" style="font-size:0.85rem;color:var(--text-muted);">GPU Idle Detection</a>
+          <a href="../solutions/cloud-cost-optimization.html" style="font-size:0.85rem;color:var(--text-muted);">Cost Recommendations</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Resources</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../blog.html" style="font-size:0.85rem;color:var(--text-muted);">Blog</a>
+          <a href="../resources.html" style="font-size:0.85rem;color:var(--text-muted);">Resources</a>
+          <a href="../use-cases.html" style="font-size:0.85rem;color:var(--text-muted);">Use Cases</a>
+          <a href="../why-metafinops.html" style="font-size:0.85rem;color:var(--text-muted);">Why MetaFinOps</a>
+          <a href="../integrations.html" style="font-size:0.85rem;color:var(--text-muted);">Integrations</a>
+          <a href="../developers.html" style="font-size:0.85rem;color:var(--text-muted);">API Docs</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:0.9rem;font-weight:700;color:var(--heading);margin-bottom:1.2rem;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="../about.html" style="font-size:0.85rem;color:var(--text-muted);">About</a>
+          <a href="../careers.html" style="font-size:0.85rem;color:var(--text-muted);">Careers</a>
+          <a href="../security.html" style="font-size:0.85rem;color:var(--text-muted);">Security</a>
+          <a href="../contact.html" style="font-size:0.85rem;color:var(--text-muted);">Contact</a>
+          <a href="../privacy.html" style="font-size:0.85rem;color:var(--text-muted);">Privacy Policy</a>
+          <a href="../terms.html" style="font-size:0.85rem;color:var(--text-muted);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <a href="../index.html" class="brand" style="gap:0.5rem;">
+          <img class="brand-logo" src="../images/logo-icon-transparent.png" alt="MetaFinOps" width="28" height="25" style="height:25px;width:auto;">
+          <span class="brand-name" style="font-size:0.95rem;">MetaFinOps</span>
+        </a>
+        <span style="font-size:0.78rem;color:var(--text-muted);">&copy; 2026 MetaFinOps. All rights reserved.</span>
+      </div>
+      <div style="display:flex;gap:0.8rem;">
+        <a href="#" aria-label="LinkedIn" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+        <a href="#" aria-label="Twitter" class="social-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="chat-button" type="button" aria-label="Chat"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></button>
+
+  <script src="../js/particles.js?v=5"></script>
+  <script src="../js/main.js?v=5"></script>
+</body>
+</html>
